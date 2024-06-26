@@ -1,0 +1,335 @@
+1. What type of tests have you automated?
+Our main focus is to automate test cases to do Regression testing, Smoke testing, and Sanity testing. Sometimes based on the project and the test time estimation, we do focus on End to End testing.
+
+2. What is a Framework?
+Hybrid Testing Framework
+
+3. Why do you prefer Selenium Automation Tool?
+•	Free and open source
+•	Have large user base and helping communities
+•	Cross browser compatibility
+•	Platform compatibility
+•	Multiple programming languages support
+
+4. What is Selenese?
+Selenese is the language which is used to write test scripts in Selenium IDE.
+
+5. Which Source Code Managenment you have used ?
+GITHUB
+
+6. Which WebDriver implementation claims to be the fastest?
+HTMLUnitDriver. It is because the HTMLUnitDriver does not execute tests in the browser.
+
+7. What are the Locators available in Selenium?
+Different types of locators are:
+1	ID – 
+2	ClassName – 
+3	Name – 
+4	TagName – 
+5	LinkText – 
+6	PartialLinkText – 
+7	XPath – 
+8	CSS Selector – 
+
+8. What is the difference between Absolute Path and Relative Path?
+Absolute XPath starts from the root node and ends with desired descendant element’s node. It starts with top HTML node and ends with input node. It starts with a single forward slash(/) as shown below.
+
+Relative XPath starts from any node in between the HTML page to the current element’s node(last node of the element). It starts with a single forward slash(//) as shown below.
+
+9. What is the difference between Assert and Verify in Selenium?
+Assert: In simple words, if the assert condition is true then the program control will execute the next test step but if the condition is false, the execution will stop and further test step will not be executed.
+
+Verify: In simple words, there won’t be any halt in the test execution even though the verify condition is true or false.
+
+10. What are Soft Assert and Hard Assert in Selenium?
+Soft Assert: Soft Assert collects errors during @Test Soft Assert does not throw an exception when an assert fails and would continue with the next step after the assert statement
+Hard Assert: Hard Assert throws an AssertException immediately when an assert statement fails and test suite continues with next @Test
+
+11. How to launch a browser using Selenium WebDriver?
+Setproperty("webdriver.chrome.driver",Path of the exe file)
+WebDriver driver = new FirefoxDriver();
+
+12. Is the FirefoxDriver a Class or an Interface? 
+FirefoxDriver is a Java class, and it implements the WebDriver interface.
+
+13. Explain the line of code Webdriver driver = new FirefoxDriver(); ?
+•	WebDriver is an interface and FirefoxDriver is a class we are creating an object of WebDriver and transfer the FirefoxDriver instance to WebDriver object .
+•	WebDriver driver = new WebDriver(); Incorrect because WebDriver is a interface we can not create object of an interface.
+•	FirefoxDriver driver = new FirefoxDriver(); Correct but for every browser we have to create a different object so crossbrowser testing is not possible 
+•	WebDriver driver = new FirefoxDriver(); Correct it overcome the previous problem now we can use WebDriver object to run any Webdriver APIs
+
+14. Challenges in Selenium Tools ?
+       Writing dynamic xpath
+       Synchronization problems
+       Unexpected error launching Internet Explorer
+       Window based Popup
+       Run the test in IE browser      
+
+15. What are the different exceptions you have faced in Selenium WebDriver?
+•	WebDriverException : when the driver in the Selenium Program code is unable to find the Alert on the web page to switch
+•	TimeoutException
+•	NoAlertPresentException
+•	NoSuchWindowException
+•	NoSuchElementException
+•	StaleElementReferenceException
+•	IllegalStateException
+
+16. What are the types of waits available in Selenium WebDriver?
+In Selenium we could see three types of waits such as Implicit Waits, Explicit Waits and Fluent Waits.
+•	Implicit Waits – 
+•	Explicit Waits – 
+•	Fluent Waits – 
+•	PageLoadTimeOut
+•	Thread.sleep() – static wait
+
+17. How to input text in the text box without calling the sendKeys()?
+// To initialize js object
+JavascriptExecutor JS = (JavascriptExecutor)driver;
+// To enter username
+JS.executeScript("document.getElementById(‘User').value=test.com'");
+
+18. What is the difference between driver.get() and driver.navigate.to(“url”)?
+driver.get(): To open an URL and it will wait till the whole page gets loaded
+driver.navigate.get(): To navigate to an URL and It will not wait till the whole page gets loaded
+
+18. Can I navigate back and forth in a browser in Selenium WebDriver?
+We use Navigate interface to do navigate back and forth in a browser. It has methods to move back, forward as well as to refresh a page.
+driver.navigate().forward(); – to navigate to the next web page with reference to the browser’s history
+driver.navigate().back(); – takes back to the previous webpage with reference to the browser’s history
+driver.navigate().refresh(); – to refresh the current web page thereby reloading all the web elements
+driver.navigate().to(“url”); – to launch a new web browser window and navigate to the specified URL
+
+19. How to fetch the current page URL in Selenium?
+To fetch the current page URL, we use getCurrentURL()
+driver.getCurrentUrl();
+
+20. How can we maximize browser window in Selenium?
+To maximize browser window in selenium we use maximize() method. This method maximizes the current window if it is not already maximized
+driver.manage().window().maximize();
+
+21. How to delete cookies in Selenium?
+To delete cookies we use deleteAllCookies() method
+driver.manage().deleteAllCookies();
+
+22. What is the difference between driver.close() and driver.quit() methods?
+Purpose of these two methods (driver.close and driver.quit) is almost same. Both allow us to close a browser but still, there is a difference.
+driver.close(): To close current WebDriver instance
+driver.quit(): To close all the opened WebDriver instances
+
+23. What is the difference between driver.findElement() and driver.findElements() commands?
+The difference between driver.findElement() and driver.findElements() commands is-
+•	findElement() returns a single WebElement (found first) based on the locator passed as parameter. Whereas findElements() returns a list of WebElements, all satisfying the locator value passed.
+•	Syntax of findElement()-
+•	WebElement textbox = driver.findElement(By.id(“textBoxLocator”));
+•	Syntax of findElements()-
+•	List <WebElement> elements = element.findElements(By.id(“value”));
+•	Another difference between the two is- if no element is found then findElement() throws NoSuchElementException whereas findElements() returns a list of 0 elements.
+
+24. How to find whether an element is displayed on the web page? 
+WebDriver facilitates the user with the following methods to check the visibility of the web elements. These web elements can be buttons, drop boxes, checkboxes, radio buttons, labels etc.
+1	isDisplayed()
+1	isSelected()
+1	isEnabled()
+
+25. How to select a value in a dropdown?
+By using Select class
+WebElementmySelectElement = driver.findElement(By.name("dropdown"));
+Select dropdown = new Select(mySelectElement);
+dropdown.selectByVisibleText(Text);
+dropdown.selectByIndex(Index);
+dropdown.selectByValue(Value);
+
+26. How to capture Screenshot in Selenium WebDriver?
+  TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+  File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+  File DestFile=new File(fileWithPath);
+  FileUtils.copyFile(SrcFile, DestFile);
+
+27. How to mouse hover on a web element using WebDriver?
+By using Actions class
+WebElement ele = driver.findElement(By.xpath("xpath"));
+Actions action = new Actions(driver);
+action.moveToElement(ele).build().perform();
+
+28. How can we handle web based pop-up?
+driver.switchTo().alert().dismiss();
+driver.switchTo().alert().accept();
+driver.switchTo().alert().getText();
+
+29. How do you read test data from excels?
+Workbook WB;
+FileInputStream fin=new FileInputStream(File_name);
+WB=WorkbookFactory.create(fin);
+Sheet sh = WB.getSheet(Sheet_name);
+Row rw_obj = sh.getRow(0);
+Cell cell_obj = rw_obj.getCell(i);
+String Attri = cell_obj.toString();
+WB.close();
+
+30. What is Object Repository in Selenium WebDriver?
+Properties file
+Properties obj = new Properties();
+FileInputStream pagobj = new FileInputStream (File_name);	
+obj.load(pagobj);
+return obj.getProperty(Keys);
+
+31. How can you use the Recovery Scenario in Selenium WebDriver?
+By using “Try Catch Block” within Selenium WebDriver Java tests.
+
+32. How to Upload & Download a file in Selenium WebDriver?
+
+
+33. How you shedule youe test ?
+Jenkins
+
+34. How to switch between frames in Selenium?
+By using the following code, we could switch between frames.
+driver.switchTo().frame();
+
+35. How To Scroll Web Page Down Or UP Using Selenium WebDriver?
+
+36. How To Perform Double Click Action In Selenium WebDriver?
+
+37. How To Perform Right Click Action (Context Click) In Selenium WebDriver?
+action.contextClick(driver.findElement(By.xpath()).build().perform();
+
+38. How To Perform Drag And Drop Action in Selenium WebDriver?
+
+38. How to exclude a particular test method from a test case execution? 
+By adding the exclude tag in the testng.xml
+<classes>
+  <class name="TestCaseName">
+     <methods>
+       <exclude name="TestMethodNameToExclude"/>
+     </methods>
+  </class>     
+</classes>
+
+39. How to exclude a particular test group from a test case execution? 
+By adding the exclude tag in the testng.xml
+<groups>
+    <run>
+             <exclude name="TestGroupNameToExclude"/>
+    </run>     
+</groups>
+
+40. How to disable a test case in TestNG ?
+To disable the test case we use the parameter enabled = false to the @Test annotation.
+@Test(enabled = false)
+
+41. How to Ignore a test case in TestNG?
+To ignore the test case we use the parameter enabled = false to the @Test annotation.
+@Test(enabled = false)
+
+42. How to use dataprovider
+DataProvider
+@DataProvider(name = "Authentication")
+public static Object[][] credentials() {
+ 
+        return new Object[][] { 
+	{ "testuser_1", "Test@123" }, 
+	{ "testuser_1", "Test@123" }};
+ 
+}
+ 
+@Test(dataProvider = "Authentication")
+public void test(String sUsername, String sPassword) { }
+
+43. How to use Parallel Excuation
+<suite thread-count="3" name="Suite" parallel="tests">
+  
+  <test name="Test">
+    <parameter name="Browser" value="firefox"></parameter>
+      <classes>
+        <class name="make_my_trip.MMT_TestNGaa"/>
+      </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test1">
+    <parameter name="Browser" value="chrome"></parameter>
+      <classes>
+        <class name="make_my_trip.MMT_TestNGaa"/>
+      </classes>
+  </test> <!-- Test -->
+
+</suite> <!-- Suite -->
+
+44. How many TestNG Annotations 
+@BeforeSuite
+@BeforeTest
+@BeforeClass
+@BeforeMethod
+@Test
+@AfterMethod
+@AfterClass
+@AfterTest
+@AfterSuite
+
+45. Explain Implicit Wait - driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
+46. Explain Explicit Wait - WebDriverWait wait = new WebDriverWait(driver,10);
+		wait.util(ExpectedConditions.elementToBeClickable(By.xpath()));
+
+47. Explain Extend Reporter
+ExtentReports extent = new ExtentReports (System.getProperty("user.dir") +"/test-output/STMExtentReport.html", true);
+extent.addSystemInfo("Host Name", "SoftwareTestingMaterial")
+ExtentTest logger = extent.startTest("passTest");
+logger.log(LogStatus.PASS, "Test Case Passed is passTest");
+extent.endTest(logger);
+extent.flush();
+
+48. Explain Window Handling
+Set<String> allWindowHandles = driver.getWindowHandles();
+Iterator<String> itr = allWindowHandles .iterator()
+String Currentwindow = itr.next();
+driver.switchTo().window(Currentwindow);
+
+49. Framework folder explain
+E2E
+Page
+Function
+ Utility
+ Excel
+BrowserFactory
+
+50. Bat file to run the test without ide
+mvn test -Dtest=ClassName#TestName
+
+51. Auto it
+Controlfocus("Open","","Edit1")
+ControlSetText("Open","","Edit1","file path")
+ControlClick("Open","","Button1")
+Runtime.getRuntime().exec("exe file path");
+
+52. Parameter in xml file
+@Parameters({"author","searchKey"})
+<parameter name="author" value="Guru99" />
+
+53. Explain Selenium Grid
+
+Test Script
+DesiredCapabilities dr = DesiredCapabilities.firefox();
+dr.setBrowserName("firefox");
+dr.setPlatform(Platform.WINDOWS);
+URL Grid_URL = new URL(http://localhost:4444/wd/hub)
+RemoteWebDriver driver=new RemoteWebDriver(Grid_URL , dr);
+driver.navigate().to("http://gmail.com");                   
+
+Hub Server
+ECHO OFF
+java -jar C:\Users\Yogesh\Desktop\Selenium_project\Java_rar\selenium-server-standalone-2.53.1.jar -role hub
+PAUSE
+
+Node Server
+ECHO OFF
+java -jar F:\Sel\Java_rar\selenium-server-standalone-2.53.1.jar -role webdriver -hub http://localhost:4444/grid/register -browser browserName=iexplore
+-browser browserName=firefox -browser browserName=chrome
+PAUSE
+
+Action class
+POM
+Maven
+array
+java script executer
+
+

@@ -1,0 +1,243 @@
+1. Explain Class  - A class is a user defined blueprint or prototype from which objects are created.  
+                    It represents the set of properties or methods that are common to all objects of one type.
+
+2. Explain Object - An entity that has state and its behavior is known as an object.
+
+3. Explain Encapsulation - In encapsulation, the variables of a class will be hidden from other classes and can be accessed only through the methods of 			   their current class. We use private access modifier for encapsulation. Hide the data for security purpose.
+
+4. Explain Abstraction - Abstraction is a process of hiding the implementation details from the user, only the functionality will be provided to the user. 
+			 Hide unimportent data show only neccessery data.
+
+5. Explain Inheritance - Inheritance is a process in which a child inherits the properties and actions (functions) of it s parent.
+
+6. Explain Abstract class
+Abstract class doesn't support multiple inheritance.
+Abstract class can have final, non-final, static and non-static variables.
+Abstract class can provide the implementation of interface.
+The abstract keyword is used to declare abstract class.
+An abstract class can be extended using keyword "extends".
+
+7. Explain Interface
+Interface supports multiple inheritance.
+Interface has only static and final variables.
+Interface can't provide the implementation of abstract class.
+The interface keyword is used to declare interface.
+An interface can be implemented using keyword "implements".
+
+8. Polymorphism 
+
+Polymorphism allows you define one interface and have multiple implementations.
+Polymorphism in java is a concept by which we can perform a single action by different ways
+Types of polymorphism
+
+Static Polymorphism/Compile time polymorphism Method Overloading: Example 
+Dynamic Polymorphism/Runtime polymorphism Method Overriding: Example
+
+9. Constructor
+
+Constructor name will be same as class name 
+constructors create and initialize objects that don't exist yet
+Constructors can't be called directly; they are called implicitly when the new keyword creates an object
+Constructor does not return any thing even void 
+
+10. Method
+
+Methods perform operations on objects that already exist.
+Methods can be called directly on an object that has already been created with new.
+Method does return.
+
+11. Wrapper Class
+
+In multithreading, we need an object to support synchronization.
+They are used to convert the primitive data types into objects.They are of 2 types:
+Local Primitives are stored on the Stack. Collections store their values via a reference to an Object's memory location in the Heap.
+
+Unboxing: It is just the reverse process of autoboxing. Automatically converting an object of a wrapper class to its corresponding primitive type is known as unboxing.
+
+Autoboxing: Automatic conversion of primitive types to the object of their corresponding wrapper classes is known as autoboxing.
+
+12. This
+'this' keyword is used to refer current instance of an object.
+It is a non-static method and cannot be used inside main method in Java.
+
+13. Super
+It is used to access the methods of a parent class.
+It is a non-static method and cannot be used inside main method in Java.
+
+14. Call by Value - If we call a method passing a value, it is known as call by value. The changes being done in the called method, is not affected in the        calling method.
+
+15. Type casting - When you assign value of one data type to another, then we use type casting.There are 2 type of Type casting
+
+If we want to assign a value of smaller data type to a larger data type we perform Widening or Automatic type casting.
+Widening conversion takes place when two data types are automatically converted
+
+If we want to assign a value of larger data type to a smaller data type we perform explicit type casting or narrowing.
+
+byte	1 byte	
+short	2 bytes	
+int	4 bytes	
+long	8 bytes	
+float	4 bytes	
+double	8 bytes	
+char	2 byte
+
+16. Method Overloading - Method Overloading is a feature that allows a class to have more than one method having the same name, if their argument lists are different
+
+add(int, int)
+add(int, int, int)
+
+17. Method overriding - The main advantage of method overriding is that the class can give its own specific implementation to a inherited method without even modifying the parent class code.Method in parent class called Overridden method & method in child
+class called overriding method.
+
+class Human{
+   //Overridden method
+   public void eat()
+   {
+      System.out.println("Human is eating");
+   }
+}
+class Boy extends Human{
+   //Overriding method
+   public void eat(){
+      System.out.println("Boy is eating");
+   }
+   public static void main( String args[]) {
+      Boy obj = new Boy();
+      //This will call the child class version of eat()
+      obj.eat();
+   }
+}
+
+18. Types Of Exception 
+
+Checked Exception are detected and thrown by the compiler during compilation.
+ ClassNotFound
+ Input/Output
+ IllegalAccess
+ NoSuchField
+ NoSuchMethod
+
+Unchecked Exception are those that escapes the notice of compiler. It is generally error in programming logic.
+ Arithmetic
+ NullPointer
+ IndexOutOfBound
+ OutOfMemoryError
+
+19. Exception Handling
+
+Try block is used to enclose the code that might throw an exception. It must be used within the method.
+Catch block is used to handle the Exception. It must be used after the try block only.
+Finally block is always executed whether exception is handled or not.
+Java throw keyword is used to explicitly throw an exception.
+Java throws keyword is used to declare an exception.
+
+20. Difference between final, finally and finalize
+
+Final is used to apply restrictions on class, method and variable. Final class can't be inherited, final method   can't be overridden and final variable value can't be changed.
+Finally is used to place important code, it will be executed whether exception is handled or not.
+Finalize is used to perform clean up processing just before object is garbage collected.
+
+21. Types of access modifier
+
+Public : Access modifier public means that all code can access the class, field, constructor or method
+
+Protected : Accessible only inside the same class, with the addition  that subclasses can access protected methods and member variables (fields) of the superclass.
+
+Private : If a method or variable is marked as private,then the code can only access only by the same class.
+
+Default: Accessible to the classes in the same package only.
+
+22. Types of Collections
+
+List : It contains methods to insert and delete elements in index basis.
+
+ListIterator : It is the most powerful iterator but it is only applicable for List implemented classes, 
+	       so it is not a universal iterator.It provides bi-directional iteration.
+
+Iterator
+.      Only forward direction iterating is possible. Replacement and addition of new element is not supported by Iterator. 
+.      Iterator is used for traversing List and Set both
+.      Iterator is used to iterator over collection of objects.
+.      Iterator is interface.
+
+ArrayList
+       Array list is dynamic array, which means it will grow and shrink automatically.
+       Array list allows us to store duplicate elements.
+       Array list store data based on index.
+       Array list internally usages array.
+       Array list maintains insertion order.
+       Array list are not thread safe (not synchronized).
+       Manipulation is slow because a lot of shifting needs to be occurred if any    element is removed from the Array list.
+       Retrievals is fast in Array list.
+       Array list allows us to store any kind of data.
+
+LinkList 
+.      Add and remove from both the direction.Search is slow.
+.      LinkedList each node holds both data and address of next and previous node.
+       It allows us to store duplicate objects
+       It will grow dynamically on run time
+       It maintains insertion order
+       It is not thread safe (non synchronized)
+       Data retrieval is slow in linked list.
+       Manipulation is fast, due to no shifting operation happens.
+
+Set : Set which is a set of elements which is unordered and every element is unique. 
+
+Vector
+       Vector is class, which will allow us to store and manipulate groups of data.
+       It allows us to store duplicate objects
+       It will grow dynamically on run time
+       It maintains insertion order
+       It is thread safe (synchronized)
+
+
+23. Explain Java StringBuffer class
+Java StringBuffer class is used to create mutable (modifiable) string. StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.
+
+
+24. Explain Java StringBuilder class
+Java StringBuilder class is used to create mutable (modifiable) string. StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
+
+
+25. Explain Multithreading in Java
+Multithreading is a Java feature that allows concurrent execution of two or more parts of a program for maximum utilization of CPU. 
+Each part of such program is called a thread. So, threads are light-weight processes within a process.
+
+
+26. Explain Lifecycle and States of a Thread in Java
+A thread in Java at any point of time exists in any one of the following states. A thread lies only in one of the shown states at any instant:
+New
+Runnable
+Running
+Non-Runnable (Blocked)
+Terminated
+
+27. Defect life cycle
+New
+Assigned - Rejected/Defered/Duplicate
+Open
+Fixed
+Retesting - Reopen
+Verified
+Closed
+
+28. Differece between a static variable and final variable 
+ 
+Static Variable It is a variable which belongs to the class and not to object (instance).
+
+		A single copy to be shared by all instances of the class.
+		A static variable can be accessed directly by the class name and doesn’t need any object.
+
+Final Variable The final variable can not be reinitialized.
+  	       It is compulsory to initialize the final variable at the time of its declaration.
+
+29. Why is the main method static?
+
+Since main method is static Java virtual Machine can call it without creating any instance of class which contains main method.Static method are loaded into separate 
+memory inside JVM called context which is created when a class is loaded.
+
+30. What’s the difference between a Maven project and a Java project?
+
+
+
+

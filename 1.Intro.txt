@@ -1,0 +1,23 @@
+Hi, I am Sourabh Chakraborty
+Currently working in the Tsystems, as a consultent from past 2 yrs. total expriance is 7+ years
+Come to the professional skills I have worked on Selenium(java) & UFT using maven ,github, testng and jenkins.
+
+From project side
+1. So currently we are 4 members in the team. I am leading all of them.
+2. Currently working on HASP(Hybrid application service platform). In which we order service from SNOW and track the application till it deploy in our system.
+3. In which it will go to multiple applications like SNOW-->Gitlab-->Consul-->vcenter-->Promuthus-->SNOW and we have to track the status.
+4. Currently we got requiredment from client then we will create manual test cases & verify test data scope with ASO.
+5. We perform manual e2e testing then automation started for those requiredment. 
+6. For automation we are using selenium webdriver(java) and we created the                                              	framework from strach.
+7. We use github for version control and jenkins for shedules the task and bat file to run the test without IDE.
+
+Chanllenges in project :
+1. Manage the multiple work at a same time.
+2. Manage with other team to test e2e testing for discovery.
+3. Discussion with ASO regarding the issue in the product.
+
+Chanllenges in automation :
+1. Dynamic xpath.
+2. Dynamic wait.
+WebDriverWait wait = new WebDriverWait(driver,10);
+wait.util(ExpectedConditions.elementToBeClickable(By.xpath()));

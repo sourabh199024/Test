@@ -1,0 +1,217 @@
+Java Program
+
+1. Find Armstrong number between 100-999.
+int sum=0,num,temp;
+		  for(int i=100;i<=999;i++) 
+		  {
+			  sum=0;
+			  num=i;
+			   while(num>0)
+			   {
+				   temp=num%10;
+				   num=num/10;
+				   sum=sum+(temp*temp*temp);
+			   }
+			   if(sum==i)
+			   {
+				   System.out.println("Number is Armstrong " +sum);
+			   }
+		  }
+
+2. Find the number is armstrong or not.
+Scanner in = new Scanner(System.in);
+		int num1 = in.nextInt();
+		int sum=0,num,temp;
+			   num=num1;
+			   while(num>0)
+			   {
+				   temp=num%10;
+				   num=num/10;
+				   sum=sum+(temp*temp*temp);
+			   }
+			   if(sum==num1)
+			   {
+				   System.out.println("Number is Armstrong " +sum);
+			   }
+3. Reserve the given string.
+String str="Sourabh",rev="";
+		   for(int i=str.length()-1;i>=0;i--)
+		   {
+			   rev = rev + str.charAt(i);
+		   }
+		   System.out.println(rev);
+4. Find Prime number between 1-100.
+int counter=0;
+		for(int i=1;i<=100;i++)
+		{
+			counter=0;
+			for(int j=1;j<=i;j++) 
+			{
+				if(i%j==0)
+				{
+					counter++;
+				}
+			}
+			if(counter==2)
+			{
+				  System.out.println("Number is prime "+i);
+			}
+		}
+5. Find the number is Prime or not.
+			Scanner in = new Scanner(System.in);
+			int var = in.nextInt();
+			int counter=0;
+			for(int j=1;j<=var;j++) 
+			{
+				if(var%j==0)
+				{
+					counter++;
+				}
+			}
+			if(counter==2)
+			{
+				  System.out.println("Number is prime "+var);
+			}
+6. Factorial using(For/While).
+int num = 5,sum=1;
+		  for(int i=1;i<=num;i++)
+		  {
+			  sum=sum*i;
+		  }
+		System.out.println(sum);
+
+int num = 5,sum=1;
+		  while(num>=1)
+		  {
+			  sum=sum*num;
+			  num--;
+		  }
+		System.out.println(sum);
+
+7. Fibonacci series.
+int fis=0,sec=1,temp;
+		System.out.println(fis);
+		System.out.println(sec);
+		  for(int i=1;i<=10;i++)
+		  {
+			  temp=fis+sec;
+			  fis=sec;
+			  sec=temp;
+			  System.out.println(temp);
+		  }
+8. Check the number is palindrom or not.
+int num=1458,temp,sum=0,count=0;
+		  while(num>0)
+		  {
+			  temp=num%10;
+			  num=num/10;
+			  sum=(sum*10)+temp;
+
+		  }
+		  System.out.println(sum);
+9. Reserve the sentence.
+		String str="Sourabh is the great",rev="";
+		String[] strarr = str.split(" ");
+		   for(int i=strarr.length-1;i>=0;i--)
+		   {
+			   rev = rev + strarr[i]+" ";
+		   }
+		   System.out.println(rev);
+10.Reserve the sentence with each word.
+String str="Sourabh is the great",rev="";
+		String[] strarr = str.split(" ");
+		   for(int i=strarr.length-1;i>=0;i--)
+		   {
+			   for(int j= strarr[i].length()-1;j>=0;j--)
+			   {
+				   rev = rev + strarr[i].charAt(j);
+			   }
+			   rev = rev +" ";
+		   }
+		   System.out.println(rev);
+11.Remove the duplicates From String.
+Program.run("Sourabhsoura");
+
+public static void run(String str) {
+		for(int i=0;i<=str.length()-1;i++)
+		  {
+			  for(int j=i+1;j<=str.length()-1;j++)
+			  {
+				  if(str.charAt(i)==str.charAt(j))
+				  {
+					  str = str.replace(String.valueOf(str.charAt(i)), "");
+					  Program.run(str);  
+				  }
+			  } 
+		  }
+		System.out.println(str);
+	}
+12.Check two strings are anagrams.
+String var="cat",var1="qtc";
+		boolean status;
+		var = var.replace("//s", "");
+		var1 = var1.replace("//s", "");
+		  if(var.length()!=var1.length())
+		  {
+			  System.out.println("String is not a Anagram");
+		  }
+		  char[] vararr = var.toCharArray();
+		  char[] vararr1 = var1.toCharArray();
+		  Arrays.sort(vararr);
+		  Arrays.sort(vararr1);
+		  if(status = Arrays.equals(vararr, vararr1))
+		  {
+			  System.out.println("String is a Anagram");
+		  }
+		  else
+		  {
+			  System.out.println("String is not a Anagram");
+		  }
+13.Check whether array contains duplicates.
+String[] str= {"A","S","Q","E","R"},str1= {"Y","S","R","E"};
+		  for(int i=0;i<=str.length-1;i++)
+		  {
+			  for(int j=0;j<=str1.length-1;j++)
+			  {
+				  if(str[i]==str1[j])
+				  {
+					  System.out.println(str[i]);
+				  }
+			  }
+		  }
+14.Find duplicates From String.
+String str="Sourabhsoura",rev="";
+		  for(int i=0;i<=str.length()-1;i++)
+		  {
+			  for(int j=i+1;j<=str.length()-1;j++)
+			  {
+				  if(str.charAt(i)==str.charAt(j))
+				  {
+					  System.out.println(str.charAt(i));
+				  }
+			  }
+		  }
+15.Sum of the number and count the number.
+int num=1458,temp,sum=0,count=0;
+		  while(num>0)
+		  {
+			  temp=num%10;
+			  num=num/10;
+			  sum=sum+temp;
+			  count++;
+		  }
+		  System.out.println(sum);
+		  System.out.println(count);
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+1.Find Armstrong number between 100-999.
+2.Find the number is armstrong or not.
+3.Reserve the given string.
+4.Find Prime number between 100-999.
+5.Find the number is Prime or not.
+6.Factorial using(For/While)
+7.Fibonacci series
+8.Check the number is palindrom or not.
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------

@@ -1,0 +1,56 @@
+GitHub 
+
+git init   
+git add .
+git commit -m "Comment"
+
+	git config --global user.email "you@example.com"
+	git config --global user.name "Your Name"
+
+git remote add origin git@github.com:User/UserRepo.git
+git push -u origin master
+
+git clone "Git repo URL"
+git remote add origin https://github.com/ArtisahuGit/OrangeHRM.git 
+git pull origin master
+
+Jenkins
+
+Run selenium script through Jenkins
+1. Download Jenkins from the official website of Jenkins
+2. Open cmd java –jar and enter the path of a .war file
+3. Type “http://localhost:8080” in the browser and press enter.
+4. Go to Jenkins dashboard -- Click on manage Jenkins -- Click on configure Jenkins -- Click on JDK installation(In JDK name section enter the name, under Java Home section – give your java path)
+5. Create a TestNG xml file of script.
+6. Open the notepad and type-: Java –cp bin;lib/* org.testng.TestNG testng.xml(Save the file with .bat extension)
+7. Create a freestyle project in jenkins
+8. Click on use custom workspace under Advance project option and give your Selenium script project workspace path
+9. Then go to Build and Select an option from the drop-down box, execute your build through Windows batch command
+10.Click on apply and save
+11.Click on the build now and see the build result on console output
+
+Scheduling a Simple Job
+1. After creating a project in jenkins
+2. Go to Build Triggers section select the checkbox marked Build periodically.
+3. Set the time when you run the build.
+
+Polls SCM
+1. After creating a project in jenkins
+2. Go to Build Triggers section select the checkbox marked Poll SCM.
+3. In source code managnment section select the SCM you want.
+4. Give Repo URL and branch name where you want to get the script.
+
+Multiple SCM in Jenkins job
+1. Install Multiple SCMs plugin
+2. After creating a project in jenkins
+3. In source code managnment section select the SCM you want.
+4. Give both the Repo URL and branch name where you want to get the script.
+5. Select checkout to sub directry. Path of the directory.
+
+Master and Slave in jenkins
+1.On your master machine go to Manage Jenkins > Manage Nodes.
+2.New Node -- Enter Node Name -- Select Permanent Agent -- Press OK.
+3.Set a number of executors -- Set a Remote FS Root (For a Windows slave, use something like: "C:\Jenkins\")
+4.Usage setting:"Leave this machine for tied jobs only" -- Launch Method:"Launch slave agents via Java Web Start" -- Press OK
+5.Manage Jenkins -- Manage Nodes -- Download the slave node and run that npde in the slave machine.
+
